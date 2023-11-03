@@ -61,3 +61,6 @@ for  row  in  range(2, row_max+1):
     ws['H' + str(row)].value = lst[row-2][2]
 
 wb.save('student.xlsx')
+
+
+#커밋 테스트
