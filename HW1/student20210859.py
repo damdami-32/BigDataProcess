@@ -46,13 +46,21 @@ for i in range(len(B)):
         li = [dic[B[i]], B[i], 'B0']
     lst.append(li)
 
-for i in range(len(other)):
+o = len(other)
+other2 = []
+
+for i in range(o):
     if other[i] < 40:
         li = [dic[other[i]], other[i], 'F']
-    elif i < int(len(other) * 0.5):
-        li = [dic[other[i]], other[i], 'C+']
     else:
-        li = [other[B[i]], other[i], 'C0']
+        other2.append(other[i])
+    lst.append(li)
+
+for i in range(len(other2)):
+    if i < int(len(other2) * 0.5):
+        li = [dic[other2[i]], other2[i], 'C+']
+    else:
+        li = [dic[other2[i]], other2[i], 'C0']
     lst.append(li)
 
 lst.sort()
