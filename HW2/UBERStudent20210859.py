@@ -1,4 +1,4 @@
-import datetime
+import calendar
 import sys
 
 day_lst = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
@@ -11,7 +11,7 @@ with open(sys.argv[1], "r") as input_file:
         colon = line.split(",")
         days = colon[1].split("/")
         days = list(map(int, days))
-        day = datetime.date(int(days[2]), int(days[0]), int(days[1])).weekday()
+        day = calendar.weekday(int(days[2]), int(days[0]), int(days[1]))
 
         lst = [colon[0], day_lst[day], colon[2], colon[3]]
 
