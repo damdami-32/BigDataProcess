@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     mat, labels = createDataSet(train)
 
-    for k in range(1, 20):
+    for k in range(1, 21):
         count = 0
         error = 0
 
