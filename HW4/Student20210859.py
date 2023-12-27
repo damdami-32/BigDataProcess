@@ -16,14 +16,14 @@ def createDataSet(dirname):
         matrix[i, :] = getVector(dirname + '/' + fileNameStr)
     return matrix, labels 
 
-def getVector(filename): # txt file을 1행 1024열 vector(list)로 변환 
-    vector = np.zeros((1, 1024)) # 32*32 = 1024
+def getVector(filename):
+    vector = np.zeros((1, 1024), dtype=int)  # 32 * 32 = 1024
     with open(filename) as f:
         for i in range(32):
             line = f.readline()
             for j in range(32):
                 vector[0, 32 * i + j] = int(line[j])
-        return vector
+    return vector
     
 def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0]
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         for i in range(length):
             answer = int(testList[i].split('_')[0])
             testData = getVector(test + '/' + testList[i])
-            classfyRs = classify0(test, mat, labels, k)
+            classfyRs = classify0(testData, mat, labels, k)
 
             count += 1
             if answer != classfyRs:
