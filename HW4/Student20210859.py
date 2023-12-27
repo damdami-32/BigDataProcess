@@ -41,8 +41,8 @@ def classify0(inX, dataSet, labels, k):
     return sortedClassCount[0][0]
 
 if __name__ == "__main__":
-    train = 'trainingDigits'
-    test = 'testDigits'
+    train = sys.argv[1]
+    test = sys.argv[2]
 
     testList = listdir(test)
     length = len(testList)
